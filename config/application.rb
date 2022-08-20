@@ -49,5 +49,8 @@ module Railsdevs
 
     # Defer loading of images until it reaches a calculated distance from the viewport
     config.action_view.image_loading = "lazy"
+
+    # Custom layout for View Component previews.
+    config.view_component.default_preview_layout = "component_preview"
   end
 end

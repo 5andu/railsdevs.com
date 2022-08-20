@@ -98,4 +98,8 @@ Rails.application.routes.draw do
   authenticate :user, lambda { |user| SidekiqPolicy.new(user).visible? } do
     mount Sidekiq::Web => "/sidekiq"
   end
+
+  if Rails.env.development?
+    mount Lookbook::Engine, at: "/lookbook"
+  end
 end
